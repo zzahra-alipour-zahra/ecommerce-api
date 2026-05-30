@@ -1,0 +1,42 @@
+{
+  "name": "ecommerce-api-projects",
+  "version": "1.0.0",
+  "description": "NodeJS E-commerce API",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "seed":"node seeder.js"
+  },
+  "keywords": [
+    "API",
+    "NodeJS"
+  ],
+  "author": "zahra ",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.11.2",
+    "helmet": "^7.2.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "nodemailer": "^7.0.10",
+    "path-to-regexp": "^8.4.2",
+    "slugify": "^1.6.9",
+    "validator": "^13.15.20",
+    "xss-clean": "^0.1.4",
+    "zarinpal-ts": "^1.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
