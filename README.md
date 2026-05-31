@@ -94,7 +94,11 @@ cd ecommerce-api
 
 ## 2. Create Environment File
 
-Make sure a `config.env` file exists in the root directory.
+Copy the example environment file:
+
+cp .env.example config.env
+
+Then update the values inside config.env as needed.
 
 Example:
 
@@ -105,6 +109,18 @@ DATABASE_LOCAL=mongodb://mongodb:27017/ecommerce?replicaSet=rs0
 ```
 
 ---
+
+## Environment Variables
+
+The repository does not include real credentials or secrets.
+
+Create a `config.env` file from `.env.example` and provide your own values for:
+
+* JWT_SECRET
+* Email configuration
+* ZarinPal Merchant ID
+* Other environment-specific settings
+
 
 ## 3. Build and Start Containers
 

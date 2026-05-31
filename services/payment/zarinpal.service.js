@@ -1,7 +1,7 @@
 const axios = require('axios');
 const AppError = require('./../../utils/appError');
 
-// می‌توانید با یک شرط، آدرس‌های تستی یا واقعی را بر اساس محیط اجرا تعیین کنید
+
 const isDevelopment = process.env.NODE_ENV === 'development';
 const baseUrl = isDevelopment ? 'https://sandbox.zarinpal.com' : 'https://api.zarinpal.com';
 
