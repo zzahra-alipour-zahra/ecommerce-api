@@ -77,7 +77,7 @@ No local installation of Node.js or MongoDB is required.
 ├── Dockerfile
 ├── docker-compose.yml
 ├── config.env
-├── seedAdmin.js
+├── seeder.js
 └── README.md
 ```
 
@@ -145,7 +145,7 @@ After the MongoDB container starts, run:
 ```bash
 docker exec -it mongodb mongosh --eval "rs.initiate()"
 ##seed data
-docker-compose exec node_api node seeder.js
+docker-compose exec api node seeder.js
 ```
 
 This step is required only once.
@@ -217,7 +217,7 @@ docker-compose exec api node seeder.js
 
 Or:
 ```
-docker exec -it node_api node seeder.js
+docker-compose exec api node seeder.js
 ```
 ---
 
