@@ -209,12 +209,16 @@ Email: user@test.com
 Password: password123
 ```
 
-If these users do not exist, run the seeder script:
 
-```bash
-node seedAdmin.js
+If demo users do not exist, run:
+```
+docker-compose exec api node seeder.js
 ```
 
+Or:
+```
+docker exec -it node_api node seeder.js
+```
 ---
 
 # Available API Modules
