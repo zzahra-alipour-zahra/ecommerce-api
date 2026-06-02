@@ -13,7 +13,7 @@ const brandSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "The brand must be connected to the admin"],
+      required: [true, 'Brand creator is required'],
     },
     products: [
       {

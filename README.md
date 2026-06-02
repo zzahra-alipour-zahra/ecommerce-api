@@ -69,7 +69,7 @@ No local installation of Node.js or MongoDB is required.
 ├── controllers
 ├── model
 ├── routes
-├── middleware
+├── services
 ├── utils
 ├── docs
 │   └── postman

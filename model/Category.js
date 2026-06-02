@@ -13,7 +13,7 @@ const categorySchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "The category must be connected to the admin"],
+      required: [true, 'Category creator is required'],
     },
     image: {
       type: String,
