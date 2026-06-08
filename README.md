@@ -95,9 +95,9 @@ cd ecommerce-api
 ## 2. Create Environment File
 
 Copy the example environment file:
-
+```bash
 cp .env.example config.env
-
+```
 Then update the values inside config.env as needed.
 
 Example:
@@ -120,6 +120,39 @@ Create a `config.env` file from `.env.example` and provide your own values for:
 * Email configuration
 * ZarinPal Merchant ID
 * Other environment-specific settings
+
+
+
+#  Email Service Configuration
+
+This project uses Nodemailer for sending transactional emails.
+
+---
+
+## Development Setup (Mailtrap)
+
+Use Mailtrap for development to safely test emails without sending real ones.
+
+```env
+EMAIL_HOST=smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_USERNAME=your_mailtrap_username
+EMAIL_PASSWORD=your_mailtrap_password
+EMAIL_FROM=no-reply@example.com
+```
+## Production Setup
+
+For production environments, it is recommended to use a reliable email service provider:
+
+- SendGrid (recommended)
+- Mailgun
+- Amazon SES
+- Gmail SMTP (basic usage for small applications)
+
+These services provide better reliability, scalability, and delivery guarantees compared to basic SMTP setups.
+
+---
+
 
 
 ## 3. Build and Start Containers
