@@ -18,13 +18,7 @@ const categorySchema = new mongoose.Schema(
     image: {
       type: String,
       default: "placeholder",
-    },
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
+    }
   },
   { timestamps: true }
 );

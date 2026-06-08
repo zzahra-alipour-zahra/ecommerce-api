@@ -15,12 +15,6 @@ const brandSchema = new mongoose.Schema(
       ref: "User",
       required: [true, 'Brand creator is required'],
     },
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
   },
   { timestamps: true }
 );

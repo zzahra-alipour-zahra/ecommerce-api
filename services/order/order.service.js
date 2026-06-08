@@ -49,7 +49,7 @@ exports.createOrderData = async (user, orderItems, shippingAddress) => {
     shippingAddress,
     totalPrice,
     paymentStatus: "pending",
-    isPaid: false
+   
   });
 
   
@@ -82,7 +82,7 @@ exports.verifyOrderPayment = async (authority, status) => {
     throw new AppError("Order not found", 404);
   }
 
-  if (order.isPaid) {
+  if (order.paymentStatus === "paid") {
     throw new AppError("Order already paid", 400);
   }
 
@@ -102,7 +102,7 @@ exports.verifyOrderPayment = async (authority, status) => {
    
     await stockService.bulkUpdateStock(order.orderItems, session);
 
-    order.isPaid = true;
+    
     order.paymentStatus = "paid";
     order.paidAt = Date.now();
     order.refId = verifyData.refId;
@@ -122,7 +122,7 @@ exports.verifyOrderPayment = async (authority, status) => {
 
 exports.getSummaryData = async () => {
   const summary = await Order.aggregate([
-    { $match: { isPaid: true } },
+    { $match: { paymentStatus: "paid" } },
     {
       $group: {
         _id: null,

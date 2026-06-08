@@ -1,6 +1,7 @@
 const express = require('express');
 const categoryController = require('./../controllers/categoryController'); 
 const authController = require('./../controllers/authController');
+const productRouter = require('./productsRouter');
 
 const router = express.Router();
 
@@ -27,6 +28,8 @@ router
     authController.restrictTo('admin'),
     categoryController.deleteCategory
   );
+
+  router.use('/:categoryId/products', productRouter);
 
 module.exports = router;
 

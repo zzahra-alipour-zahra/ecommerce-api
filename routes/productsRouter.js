@@ -11,7 +11,7 @@ router.use('/:productId/reviews', reviewRouter);
 
 router
   .route('/')
-  .get(productController.getAllProducts)
+  .get(productController.setCategoryId, productController.getAllProducts)
   .post(
     authController.protect,
     authController.restrictTo('admin'),

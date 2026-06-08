@@ -26,19 +26,18 @@ exports.createProduct = catchAsync(async (req, res, next) => {
 
   const product = await Product.create(req.body);
 
-  // pushing id of products to category and brand
-  categoryFound.products.push(product._id);
-  await categoryFound.save({ validateBeforeSave: false });
-
-  brandFound.products.push(product._id);
-  await brandFound.save({ validateBeforeSave: false });
-
   res.status(201).json({
     status: "success",
     data: { data: product }
   });
 });
 
+exports.setCategoryId = (req, res, next) => {
+  if (!req.query.category && req.params.categoryId) {
+    req.query.category = req.params.categoryId;
+  }
+  next();
+};
 
 exports.getProductStats = catchAsync(async (req, res, next) => {
   const stats = await Product.aggregate([

@@ -9,7 +9,14 @@ exports.bulkUpdateStock = async (orderItems, session) => {
     }
   }));
 
+  const result = await Product.bulkWrite(bulkOptions, { session });
 
-  await Product.bulkWrite(bulkOptions, { session });
+  if (result.modifiedCount !== orderItems.length) {
+
+    throw new Error("The inventory of one or more items has changed and is not sufficient to place an order");
+  }
+
+
+  // await Product.bulkWrite(bulkOptions, { session });
 };
 

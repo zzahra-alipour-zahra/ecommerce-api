@@ -48,10 +48,6 @@ const orderSchema = new mongoose.Schema(
       fee: Number,
       fee_type: String,
     },
-    isPaid: {
-      type: Boolean,
-      default: false,
-    },
     paidAt: Date,
     isDelivered: {
       type: Boolean,
